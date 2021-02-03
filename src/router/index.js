@@ -19,6 +19,7 @@ const routes = [
     path: '/forum/:id',
     name: 'forum',
     component: () => import('@/views/PageForum.vue'),
+    props:true
   },
   {
     path:'*',
