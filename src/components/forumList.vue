@@ -1,12 +1,7 @@
 <template>
     <div class="container">
       <div class="col-full">
-          <div class="forum-list">
-
-              <h2 class="list-title">
-                  <a href="#">Forum</a>
-              </h2>
-
+          <div>
              <forum-list-items
               v-for="forum in forums"
                :key="forum['.key']"

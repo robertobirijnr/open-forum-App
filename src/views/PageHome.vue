@@ -1,23 +1,22 @@
 <template>
   <div class="col-full">
     <h1>Welcome to the Forum</h1>
-    <forum-list :forums="forums"/>
+    <category-list :categories="categories"/>
   </div>
 </template>
 
 <script>
 import dataSource from '@/data.json'
-import forumList from '@/components/forumList'
+import categoryList from '@/components/categoryList'
 console.log(dataSource)
 
 export default {
-  components: { forumList },
+  components: { categoryList },
   name: 'HelloWorld',
   data() {
     return {
-      forums: Object.values(dataSource.forums),
-      posts:dataSource.posts,
-      users:dataSource.users
+      categories: Object.values(dataSource.categories),
+      
     }
   },
   
