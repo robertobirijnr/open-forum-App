@@ -22,6 +22,12 @@ const routes = [
     props:true
   },
   {
+    path:'/category/:id',
+    name:'category',
+    component:() =>import('@/views/PageCategory.vue'),
+    props:true
+  },
+  {
     path:'*',
     name:'notFound',
     component:()=>import('@/views/PageNotFound.vue')
