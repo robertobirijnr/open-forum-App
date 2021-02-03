@@ -19,7 +19,7 @@
 
 <script>
 import threadList from '../components/threadList.vue'
-import dataSource from '@/data.json'
+
     export default {
   components: { threadList },
   props:{
@@ -30,10 +30,10 @@ import dataSource from '@/data.json'
   },
   computed:{
       forum(){
-          return dataSource.forums[this.id]
+          return this.$store.state.dataSource.forums[this.id]
       },
       threads(){
-          return Object.values(dataSource.threads)
+          return Object.values(this.$store.state.dataSource.threads)
           .filter(thread => thread.forumId === this.id)
       }
   }

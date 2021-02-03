@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import dataSource from '@/data.json'
 import CategoryListItems from '../components/categoryListItems.vue'
     export default {
         props:{
@@ -20,7 +19,7 @@ import CategoryListItems from '../components/categoryListItems.vue'
         },
         computed:{
             category(){
-                return dataSource.categories[this.id]
+                return this.$store.state.dataSource.categories[this.id]
             }
         }
     }

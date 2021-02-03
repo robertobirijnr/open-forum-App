@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import dataSource from '@/data.json'
+
     export default {
         props:{
             thread:{
@@ -40,7 +40,7 @@ import dataSource from '@/data.json'
               return  Object.keys(this.thread.posts).length -1
             },
             user(){
-                return dataSource.users[this.thread.userId].name
+                return this.$store.state.dataSource.users[this.thread.userId].name
             }
         }
     }

@@ -6,19 +6,20 @@
 </template>
 
 <script>
-import dataSource from '@/data.json'
 import categoryList from '@/components/categoryList'
-console.log(dataSource)
+
+
 
 export default {
   components: { categoryList },
-  name: 'HelloWorld',
+  name: 'page-home',
   data() {
     return {
-      categories: Object.values(dataSource.categories),
+      categories: Object.values(this.$store.state.dataSource.categories),
       
     }
   },
+  
   
 }
 </script>

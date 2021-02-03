@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import dataSource from '@/data.json'
+
     export default {
         props:{
             post:{
@@ -32,7 +32,7 @@ import dataSource from '@/data.json'
         },
         computed:{
             users(){
-                return dataSource.users[this.post.userId]
+                return this.$store.state.dataSource.users[this.post.userId]
             },
             userPostCount(){
             return Object.keys(this.users.posts).length

@@ -33,12 +33,11 @@
                  '.key': postId
              }
              
-            
-             
-            this.$emit('save-post',{post})
+            this.$store.dispatch('createPost',post)
             this.PostText = ""
-
-            
+             
+             
+                
          }
      }
     }

@@ -10,7 +10,6 @@
 
         <post-list :posts="posts"/>
        <create-post 
-       @save-post="addPost"
        :threadId="id"
        />
 
@@ -19,7 +18,6 @@
 </template>
 
 <script>
-import dataSource from '@/data.json'
 import PostList from '../components/PostList.vue'
 import CreatePost from '../components/createPost.vue'
     export default {
@@ -33,7 +31,7 @@ import CreatePost from '../components/createPost.vue'
        },
       data() {
         return {
-            thread:dataSource.threads[this.id],
+            thread:this.$store.state.dataSource.threads[this.id],
             
             
         }
@@ -41,21 +39,10 @@ import CreatePost from '../components/createPost.vue'
      computed:{
         posts(){
             const postIds = Object.values(this.thread.posts)
-            return Object.values(dataSource.posts)
+            return Object.values(this.$store.state.dataSource.posts)
             .filter(post => postIds.includes(post['.key']))
         }
-     },
-     methods:{
-         addPost({post}){
-             const posts = post
-             const postId = post['.key']
-             this.$set(dataSource.posts, postId,posts)
-             this.$set(this.thread.posts,postId,postId)
-             this.$set(dataSource.users[post.userId].posts, postId, postId)
-         }
-         
-     }
-     
+     },  
             
     }
 </script>

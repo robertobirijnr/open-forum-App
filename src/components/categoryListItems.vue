@@ -12,7 +12,7 @@
 
 <script>
 import forumList from './forumList.vue'
-import dataSource from '@/data.json'
+
     export default {
   components: { forumList },
   props:{
@@ -23,7 +23,7 @@ import dataSource from '@/data.json'
   },
   computed:{
       categoryForums(){
-          return Object.values(dataSource.forums)
+          return Object.values(this.$store.state.dataSource.forums)
           .filter(forum => forum.categoryId === this.category['.key'] )
       }
   }
